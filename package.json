@@ -1,0 +1,23 @@
+{
+  "name": "walkwithwoof-server",
+  "version": "1.0.0",
+  "description": "server for walkwithwoof.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "firebase": "2.3.1"
+  },
+  "engines": {
+    "node": "5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nmlapre/walkwithwoof-server"
+  },
+  "keywords": [
+    "node"
+  ],
+  "license": "MIT"
+}
