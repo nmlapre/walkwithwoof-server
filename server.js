@@ -2,7 +2,7 @@ var http = require("http");
 var util = require('util');
 var Firebase = require("firebase");
 var qs = require('querystring');
-var dbref = new Firebase('https://scorching-inferno-7288.firebaseio.com/');
+var dbref = new Firebase('https://walkwithwoof.firebaseio.com/emails');
 var fs = require('fs');
 
 console.log("server started");
@@ -13,28 +13,22 @@ http.createServer(function (request, response) {
         var body = '';
 
         request.on('data', function (data) {
-            body += data.toString();
+            body += data;
+            if (body.length > 1e6)
+                request.connection.destroy();
         });
 
         request.on('end', function () {
-            //var post = qs.parse(body);
-            
-            //body_trimmed = body.substring(3, body.length-7)
-            
+            //parse the received body data
+            var post = qs.parse(body);
+
             //request ended -> do something with the data
             response.writeHead(200, "OK", {'Content-Type': 'text/html'});
             
-            //parse the received body data
-            //var decodedBody = qs.parse(body_trimmed);
-            
-            var parsedBody = JSON.parse(body);
-            var decodedBody = parsedBody.trigger.properties.name;
-            
-            
             //output the decoded data to the HTTP response
-            console.log(util.inspect(decodedBody));
-            //console.log(util.inspect(decodedBody.trigger))
-            dbref.set( { name : decodedBody } );
+            console.log(post.email);
+            
+            dbref.push( { email : post.email } );
             response.end();
             
             //var post = qs.parse(body);
