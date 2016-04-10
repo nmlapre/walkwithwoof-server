@@ -28,7 +28,7 @@ http.createServer(function (request, response) {
             //output the decoded data to the HTTP response
             console.log(post.email);
             
-            dbref.update ( { email : post.email } );
+            dbref.push ( { email : post.email } );
             response.end();
             
             //var post = qs.parse(body);
