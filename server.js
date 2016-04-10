@@ -2,7 +2,7 @@ var http = require("http");
 var util = require('util');
 var Firebase = require("firebase");
 var qs = require('querystring');
-var dbref = new Firebase('https://walkwithwoof.firebaseio.com/emails');
+var dbref = new Firebase('https://walkwithwoof.firebaseio.com/');
 var fs = require('fs');
 
 console.log("server started");
