@@ -4,6 +4,9 @@ var Firebase = require("firebase");
 var qs = require('querystring');
 var dbref = new Firebase('https://walkwithwoof.firebaseio.com/');
 var fs = require('fs');
+var cors = require('cors');
+var app = express();
+app.use(cors());
 
 console.log("server started");
 
