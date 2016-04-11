@@ -32,7 +32,7 @@ http.createServer(function (request, response) {
             // response.writeHead(200, "OK", 
             //     {'Content-Type': 'text/html'}
             //     );
-            response.writeHead(301, {Location: 'http://google.com/'});
+            response.writeHead(301, {Location: 'http://walkwithwoof.com/thanks.html'});
             
             
             //output the decoded data to the HTTP response
