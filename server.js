@@ -29,10 +29,11 @@ http.createServer(function (request, response) {
             response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
             
             //request ended -> do something with the data
-            response.writeHead(200, "OK", 
-                {'Content-Type': 'text/html',
-                'Access-Control-Allow-Origin': 'http://walkwithwoof.com'}
-                );
+            // response.writeHead(200, "OK", 
+            //     {'Content-Type': 'text/html'}
+            //     );
+            response.writeHead(301, {Location: 'http://google.com/'});
+            
             
             //output the decoded data to the HTTP response
             console.log(post['email']);
