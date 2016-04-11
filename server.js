@@ -30,7 +30,7 @@ http.createServer(function (request, response) {
             //request ended -> do something with the data
             response.writeHead(200, "OK", 
                 {'Content-Type': 'text/html',
-                'Access-Control-Allow-Origin': 'http://walkwithwoof.com'
+                'Access-Control-Allow-Origin': 'http://walkwithwoof.com'}
                 );
             
             //output the decoded data to the HTTP response
