@@ -21,6 +21,7 @@ http.createServer(function (request, response) {
         request.on('end', function () {
             //parse the received body data
             var post = qs.parse(body);
+            console.log(post);
 
             // let walkwithwoof.com POST
             response.setHeader('Access-Control-Allow-Origin', 'http://walkwithwoof.com/');
@@ -34,13 +35,10 @@ http.createServer(function (request, response) {
                 );
             
             //output the decoded data to the HTTP response
-            console.log(post.email);
+            console.log(post['email']);
             
-            dbref.push ( { email : post.email } );
+            dbref.push ( { email : post['email'] } );
             response.end();
-            
-            //var post = qs.parse(body);
-            //console.log(`post.trigger`);
             
         });
     }
