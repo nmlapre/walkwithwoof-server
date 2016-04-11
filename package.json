@@ -7,12 +7,12 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "firebase": "2.3.1"
-  },
-  "engines": {
-    "node": "5.0.0",
+    "firebase": "2.3.1",
     "express": "*",
     "cors": "*"
+  },
+  "engines": {
+    "node": "5.0.0"
   },
   "repository": {
     "type": "git",
